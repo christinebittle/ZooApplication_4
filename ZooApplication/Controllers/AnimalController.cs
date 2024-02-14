@@ -64,7 +64,10 @@ namespace ZooApplication.Controllers
             //objective: communicate with our animal data api to retrieve a list of animals
             //curl https://localhost:44324/api/animaldata/listanimals
 
+
+            //We need to prove who we are to access the animals resource
            
+            //We are going to borrow the token from this request
             string url = "animaldata/listanimals";
             HttpResponseMessage response = client.GetAsync(url).Result;
 
@@ -178,7 +181,7 @@ namespace ZooApplication.Controllers
         [Authorize]
         public ActionResult Create(Animal animal)
         {
-            GetApplicationCookie();//get token credentials
+            GetApplicationCookie();
             Debug.WriteLine("the json payload is :");
             //Debug.WriteLine(animal.AnimalName);
             //objective: add a new animal into our system using the API

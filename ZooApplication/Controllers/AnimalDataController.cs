@@ -29,6 +29,7 @@ namespace ZooApplication.Controllers
         /// </example>
         [HttpGet]
         [ResponseType(typeof(AnimalDto))]
+        
         public IHttpActionResult ListAnimals()
         {
             List<Animal> Animals = db.Animals.ToList();
